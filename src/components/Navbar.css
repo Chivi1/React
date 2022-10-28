@@ -1,0 +1,21 @@
+.Navbar {
+    height: 60px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(47, 0, 255);
+}
+.Navbar > .nav-logo {
+    font-weight: 700;
+    font-size: 21px;
+    margin: 15px;
+    color: aliceblue;
+}
+.Navbar > .nav-items a{
+    color: aliceblue;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 15px;
+    position: relative;
+    opacity: 0.9;
+}
