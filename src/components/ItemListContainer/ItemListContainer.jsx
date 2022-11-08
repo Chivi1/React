@@ -6,13 +6,11 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(()=> {
-        gFetch('1')
+        gFetch()
         .then(resp =>  setProducts(resp))    
         .catch(err => console.log(err))
         .finally(()=>setLoading(false))         
     }, [])
-    .then(data => data +5 )
-    .then(respuesta => console.log(respuesta))
 
     return (
         loading 
