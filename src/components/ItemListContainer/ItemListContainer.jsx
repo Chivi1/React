@@ -1,9 +1,42 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { gFetch } from '../../utils/gFetch'
 
-const ItemListContainer = ({saludo}) => {
-    
+const ItemListContainer = () => {
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(()=> {
+        gFetch('1')
+        .then(resp =>  setProducts(resp))    
+        .catch(err => console.log(err))
+        .finally(()=>setLoading(false))         
+    }, [])
+    .then(data => data +5 )
+    .then(respuesta => console.log(respuesta))
+
     return (
-        <div> {saludo} </div>
+        loading 
+            ? 
+                <h2>Cargando...</h2>            
+            :
+                <div>
+                    <h1>ItemListContainer</h1>  
+                    
+                    { products.map( obj =>  <div key={obj.id} className='card w-50 mt-2'>
+                                                <div className='card-header'>
+                                                    {obj.name}
+                                                </div>
+                                                <div className='card-body'>
+                                                    <center>
+                                                        <img src={obj.foto} className="w-50" />
+                                                    </center>
+                                                </div>
+                                                <div className='card-footer'>
+                                                    precio : {obj.price}
+                                                </div>
+                                            </div> )  }     
+                    
+                </div>
     )
 }
 
