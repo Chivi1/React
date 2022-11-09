@@ -5,7 +5,10 @@
 }
 .App {
     background: rgb(206, 205, 201);
-    height: 100vh;
+    height: auto;
     text-align: center;
     justify-content: center;
+}
+.App > img {
+    height: 50px;
 }

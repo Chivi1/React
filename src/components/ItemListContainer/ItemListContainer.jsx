@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gFetch } from '../../utils/gFetch'
 
 const ItemListContainer = () => {
@@ -20,7 +21,9 @@ const ItemListContainer = () => {
                 <div>
                     <h1>ItemListContainer</h1>  
                     
-                    { products.map( obj =>  <div key={obj.id} className='card w-50 mt-2'>
+                    { products.map( obj =>  
+                                            <div key={obj.id} className='card w-50 mt-2'>
+                                                <Link to= {`/detail/${obj.id}`}>
                                                 <div className='card-header'>
                                                     {obj.name}
                                                 </div>
@@ -32,10 +35,8 @@ const ItemListContainer = () => {
                                                 <div className='card-footer'>
                                                     precio : {obj.price}
                                                 </div>
-                                            </div> )  }     
-                    
+                                                </Link> 
+                                            </div>)}
                 </div>
-    )
-}
-
+                    )}
 export default ItemListContainer
