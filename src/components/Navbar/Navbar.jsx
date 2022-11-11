@@ -9,9 +9,9 @@ const Navbar = () => {
             <span className='nav-logo'>CHIVI</span>
             <ul className='nav-items'>
                 <Link to= '/'>Inicio</Link>
-                <Link to= '/'>Remeras</Link>
-                <Link to= '/'>Gorras</Link>
-                <Link to= '/'>Accesorios</Link>
+                <Link to= '/categorias/remeras'>Remeras</Link>
+                <Link to= '/categorias/gorras'>Gorras</Link>
+                <Link to= '/categorias/accesorios'>Accesorios</Link>
             </ul>
             <Link to='/cart'><CartWidget/></Link>
         </div>

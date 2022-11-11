@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Navbar from './components/Navbar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Cart from './pages/Cart/Cart';
@@ -13,6 +12,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element= {<ItemListContainer/>}/>
+        <Route path='/categorias/:categoriaId' element= {<ItemListContainer/>}/>
         <Route path='/detail/:id' element= {<ItemDetailContainer/>}/>
         <Route path='/cart' element= {<Cart/>}/>
       </Routes>
