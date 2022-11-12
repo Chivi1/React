@@ -29,10 +29,10 @@ const ItemListContainer = () => {
                 <h2>Cargando...</h2>            
             :
                 <div>
-                    <h1>ItemListContainer</h1>  
+                    <h1>Tienda</h1>  
                     
                     { products.map( obj =>  
-                                            <div key={obj.id} className='card w-50 mt-2'>
+                                            <div key={obj.id} className='card'>
                                                 <Link to= {`/detail/${obj.id}`}>
                                                 <div className='card-header'>
                                                     {obj.name}

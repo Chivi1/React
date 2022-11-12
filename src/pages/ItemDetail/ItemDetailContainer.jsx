@@ -9,11 +9,12 @@ const ItemDetailContainer = () => {
   console.log(product);
   useEffect (()=>{
     gFetch()
-        .then(resp =>  setProduct(resp.find(prod => prod.id)))    
+        .then(resp =>  setProduct(resp.find(prod => prod.id == id)))    
         .catch(err => console.log(err))
         .finally(()=>setLoading(false)) 
         }       
     , [id])
+    console.log(product);
   return (
     loading
     ?

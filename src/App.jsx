@@ -10,12 +10,12 @@ function App() {
   <div className='App'>
     <BrowserRouter>
       <Navbar/>
-      <Routes>
-        <Route path='/' element= {<ItemListContainer/>}/>
-        <Route path='/categorias/:categoriaId' element= {<ItemListContainer/>}/>
-        <Route path='/detail/:id' element= {<ItemDetailContainer/>}/>
-        <Route path='/cart' element= {<Cart/>}/>
-      </Routes>
+        <Routes>
+          <Route path='/' element= {<ItemListContainer/>}/>
+          <Route path='/categorias/:categoriaId' element= {<ItemListContainer/>}/>
+          <Route path='/detail/:id' element= {<ItemDetailContainer/>}/>
+          <Route path='/cart' element= {<Cart/>}/>
+        </Routes>
     </BrowserRouter>
   </div>
   )
