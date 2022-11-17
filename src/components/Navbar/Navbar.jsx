@@ -1,12 +1,17 @@
-import React from 'react'
 import "./Navbar.css"
 import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 
+import logo from '../../assets/CHIVI_MARCA_logotipo-negro.png'
+
 const Navbar = () => {
     return (
         <div className='Navbar'>
-            <span className='nav-logo'>CHIVI</span>
+            <div className="nav-logo">
+            <img 
+                src= { logo }
+            />
+            </div>
             <ul className='nav-items'>
                 <Link to= '/'>Inicio</Link>
                 <Link to= '/categorias/remeras'>Remeras</Link>
