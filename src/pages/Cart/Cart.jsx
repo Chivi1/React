@@ -19,7 +19,7 @@ const Cart = () => {
         </ul>
         <>
           <button onClick={borrarCarrito}>Vaciar carrito</button>
-          <Link to='/' className=""><button>Seguir Comprando </button></Link>
+          <Link to='/' className=""> <button>Seguir Comprando </button> </Link>
           <button>Ir a Pagar</button>
         </>
       </div>
