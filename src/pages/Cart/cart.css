@@ -1,0 +1,19 @@
+.fotoCart {
+    height: 200px;
+    margin: 0%;
+    padding: 0;
+    margin-right: 5px;
+}
+ul{
+    list-style: none;
+}
+.producto{
+    align-items: flex-start;
+    font-size: medium;
+
+}
+button {
+    background-color: darkgrey;
+    color: black;
+    margin: 1px;
+}

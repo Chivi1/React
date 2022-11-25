@@ -19,9 +19,7 @@ const ItemListContainer = () => {
         .finally(()=>setLoading(false)) 
         }       
     }, [categoriaId])
-    const cambiarEstado = () => {
-        setBool(!bool)
-    }
+    
     console.log(categoriaId)
     return (
         loading 
