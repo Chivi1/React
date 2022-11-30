@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { gFetch } from '../../utils/gFetch'
-import { collection, doc, getDocs, getFirestore} from 'firebase/firestore'
+import { collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
@@ -12,15 +12,24 @@ const ItemListContainer = () => {
     useEffect(() => {
     const Firestore = getFirestore()
     const catalogo = collection (Firestore, 'productos')
-    getDocs(catalogo)
+    if (categoriaId) {
+    let filtroCategoria = query(catalogo, where('categoria', '==', categoriaId) )
+
+    getDocs(filtroCategoria)
+            .then((resp) => setProducts( resp.docs.map(doc => ( { id: doc.id, ...doc.data() } ) ) ))
+            .catch(err => console.log(err))
+            .finally(()=>setLoading(false)) 
+            .then((doc) => setProduct(   { id: doc.id, ...doc.data() }  ))
+    }
+    else{
+        getDocs(catalogo)
         .then((resp) => setProducts( resp.docs.map(doc => ( { id: doc.id, ...doc.data() } ) ) ))
         .catch(err => console.log(err))
             .finally(()=>setLoading(false)) 
-        .then((doc) => setProduct(   { id: doc.id, ...doc.data() }  ))
-    },[])
-    console.log(products);
+        .then((doc) => setProduct(   { id: doc.id, ...doc.data() }  ))}
+    },[categoriaId])
 
-//fake fetch anterior (no borrar hasta conseguir id hacia itemDetail)
+//fake fetch anterior (no borrar hasta conseguir id hacia itemDetailConainer)
     /* useEffect(()=> {
         if (categoriaId) {
             gFetch()
