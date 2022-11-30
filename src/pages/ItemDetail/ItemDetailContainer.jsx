@@ -4,13 +4,13 @@ import { useParams, Link  } from "react-router-dom";
 
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
-import { gFetch } from '../../utils/gFetch'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
   const { id } = useParams();
   console.log(id);
+  
   useEffect(() => {
     const Firestore = getFirestore()
     const catalogo = collection (Firestore, 'productos')
@@ -20,7 +20,8 @@ const ItemDetailContainer = () => {
         .catch(err => console.log(err))
           .finally(()=>setLoading(false))
     },[id])
-console.log(product);
+  console.log(product.id);
+
 //useeffect anterior
   /*  useEffect(() => {
     gFetch()

@@ -1,0 +1,26 @@
+.card{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0%;
+    text-decoration: none;
+    max-width:auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.card-header{
+    font-size: 30px;
+    margin: 0%;
+    padding: 0%;
+}
+.card-footer{ 
+    font-size: 25px;
+    margin: 0;
+    padding: 2px;
+    justify-content: center;
+}
+.foto{
+    height: 400px;
+    margin: 0%;
+    padding: 0%;
+}

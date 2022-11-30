@@ -1,0 +1,17 @@
+.tienda {
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+@media all and (max-width: 1500px) {
+    .tienda{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (max-width: 1030px) {
+    .tienda{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+}
