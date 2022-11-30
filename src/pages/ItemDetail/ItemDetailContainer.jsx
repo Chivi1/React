@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
+import { collection, doc, getDoc, getFirestore, query, where } from "firebase/firestore";
 import { useEffect, useState, useContext } from "react";
 import { useParams, Link  } from "react-router-dom";
 
@@ -10,14 +10,17 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
   const { id } = useParams();
-
+  console.log(id);
   useEffect(() => {
     const Firestore = getFirestore()
-    const catalogo = collection (Firestore, 'productos', id)
-      getDoc(catalogo)
+    const catalogo = collection (Firestore, 'productos')
+    let filtro = query(catalogo, where('categoria', '==', id))
+      getDoc(filtro)
       .then((doc) => setProduct(   { id: doc.id, ...doc.data() }  ))
-    },[])
-
+        .catch(err => console.log(err))
+          .finally(()=>setLoading(false))
+    },[id])
+console.log(product);
 //useeffect anterior
   /*  useEffect(() => {
     gFetch()
