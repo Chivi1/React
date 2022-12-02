@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import {  useCartContext } from "../../context/CartContext"
 
 import ItemCount from "../Contador/ItemCount"
+import "../ItemDetail/ItemDetail.css"
 
 
 const ItemDetail = ({ product }) => {
@@ -34,9 +35,9 @@ return (
                     
                     />
                 :  
-                    <div className="">
-                        <Link to='/cart' className=""> <button>Terminar mi compra </button> </Link>
-                        <Link to='/' className=""> <button> Seguir Comprando </button> </Link>
+                    <div className="buttons">
+                        <button><Link to='/cart' className=""> Terminar mi compra  </Link></button>
+                        <button><Link to='/' className="">  Seguir Comprando  </Link></button>
                     </div>
             }
             

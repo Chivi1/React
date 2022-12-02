@@ -7,21 +7,25 @@ const Cart = () => {
 
   return (
       <div>
-        <h1>Carrito</h1>
-        <ul>
-          {cartList.map((product) =>  <li key={product.id}>
-                                        <img src={product.foto} className="fotoCart" />
-                                        <div className="producto">
-                                        Nombre: {product.name} - Precio {product.price} - cantidad: {product.cantidad}
-                                        </div>
+          <h1>Carrito</h1>
+        <div className="containerCart">
+          <ul>
+            {cartList.map((product) =>  <li key={product.id}>
+                                          <img src={product.foto} className="fotoCart" />
+                                          <div className="producto">
+                                            Nombre: {product.name} - Precio {product.price} - cantidad: {product.cantidad}
+                                          </div>
                                       </li>
-          )}
-        </ul>
+            )}
+          </ul>
         <>
-          <button onClick={borrarCarrito}>Vaciar carrito</button>
-          <Link to='/' className=""> <button>Seguir Comprando </button> </Link>
-          <button>Ir a Pagar</button>
+          <div className="buttons">
+            <button onClick={borrarCarrito}>Vaciar carrito</button>
+            <button><Link to='/'> Seguir Comprando </Link></button>
+            <button>Ir a Pagar</button>
+          </div>
         </>
+        </div>
       </div>
     )
   }

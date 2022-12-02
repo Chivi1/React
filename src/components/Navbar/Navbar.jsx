@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import logo from '../../assets/CHIVI_MARCA_logotipo-negro.png'
 
+
 const Navbar = () => {
     return (
         <div className='Navbar'>

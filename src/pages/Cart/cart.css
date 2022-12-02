@@ -12,8 +12,15 @@ ul{
     font-size: medium;
 
 }
-button {
+.buttons button{
     background-color: darkgrey;
     color: black;
-    margin: 1px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.buttons > button:hover{
+    background-color: gray;
+}
+.containerCart {
+    border: 1px solid white;
 }

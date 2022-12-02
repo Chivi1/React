@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const Firestore = getFirestore()
     const catalogo = collection (Firestore, 'productos')
-    let filtro = query(catalogo, where('categoria', '==', id))
+    let filtro = doc(catalogo, id)
       getDoc(filtro)
       .then((doc) => setProduct(   { id: doc.id, ...doc.data() }  ))
         .catch(err => console.log(err))

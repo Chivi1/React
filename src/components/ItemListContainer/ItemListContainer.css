@@ -1,14 +1,22 @@
 .tienda {
     border: 1px solid white;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 @media all and (max-width: 1500px) {
     .tienda{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 @media all and (max-width: 1030px) {
+    .tienda{
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media all and (max-width: 768px) {
     .tienda{
         grid-template-columns: 1fr;
         justify-content: center;

@@ -1,0 +1,11 @@
+.buttons button{
+    background-color: darkgrey;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    margin: 5px;
+}
+.buttons > button:hover{
+    background-color: gray;
+}

@@ -32,21 +32,6 @@ const ItemListContainer = () => {
             }       
     }, [categoriaId])
     
-
-//fake fetch anterior (no borrar hasta conseguir id hacia itemDetailConainer)
-    /* useEffect(()=> {
-        if (categoriaId) {
-            gFetch()
-        .then(resp =>  setProducts(resp.filter(prod => prod.categoria === categoriaId)))    
-        .catch(err => console.log(err))
-        .finally(()=>setLoading(false)) 
-        } else {
-            gFetch()
-        .then(resp =>  setProducts(resp))    
-        .catch(err => console.log(err))
-        .finally(()=>setLoading(false)) 
-        }       
-    }, [categoriaId]) */
     
     return (
         loading 
