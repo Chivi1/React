@@ -1,0 +1,21 @@
+.footer{
+    margin: 0%;
+    padding: 0%;
+}
+footer {
+    margin-top: 20px;
+    border-top: 1px solid white;
+    display: flex;
+    height: 400px;
+}
+footer .img {
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+footer .links {
+    
+}
+footer .etiqueta{
+    
+}
