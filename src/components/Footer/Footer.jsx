@@ -1,21 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import imagen from '../../assets/CHIVI_MARCA_isotipo-negro-letras-blancas - copia.png'
 import "../Footer/Footer.css"
+import imagen from '../../assets/CHIVI_MARCA_isotipo-negro-letras-blancas - copia.png'
+import logo from '../../assets/CHIVI_MARCA_logotipo-negro.png'
+import { BsTwitter, BsTwitch, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
+    
 return (
+    
     <div className='footer'>
         <footer className=''>
             <p className='etiqueta'> © 2022 Chivi </p>
-            <>
-                <img src={imagen} className="img"/>
-            </>
             <ul className="links">
-                <li className="nav-item"><Link to = '/'>Inicio</Link></li>
-                <li className="nav-item"><a href="https://www.instagram.com/blacktailgg/">Instagram</a></li>
-                <li className="nav-item"><a href="https://twitter.com/blacktailgg">Twitter</a></li>
-                <li className="nav-item"><a href="https://www.twitch.tv/blacktailesports">Twitch</a></li>
+            <>
+                <Link to = '/'>
+                    <img src={imagen} className="img"/>
+                </Link>
+            </>
+                <li className="nav-item">
+                    <Link to = '/'><img src={logo} alt="" className='img-chivi'/></Link>
+                </li>
+                <li className="nav-itemList">
+                    <a href="https://www.instagram.com/__chivi/" className='logos'>
+                        <BsInstagram/>
+                    </a>
+                </li>
+                <li className="nav-itemList">
+                    <a href="https://twitter.com/___chivi" className='logos'>
+                        <BsTwitter/>  
+                    </a>
+                </li>
+                <li className="nav-itemList">
+                    <a href="https://www.twitch.tv/chiviofc" className='logos'>
+                        <BsTwitch/>
+                    </a>
+                </li> 
             </ul>
         </footer>
     </div>

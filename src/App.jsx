@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CartContextProvider from './context/CartContext';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
   return (
   <div className='App'>
@@ -19,7 +20,7 @@ function App() {
           <Route path='/detail/:id' element= {<ItemDetailContainer/>}/>
           <Route path='/cart' element= {<Cart/>}/>
         </Routes>
-      <Footer/>
+        <Footer/>
     </CartContextProvider>
     </BrowserRouter>
   </div>
