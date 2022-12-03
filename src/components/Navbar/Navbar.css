@@ -24,4 +24,16 @@
     position: relative;
     opacity: 0.9;
 }
+.cant-num{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    margin: 0%;
+    padding: 0;
+    position: relative;
+    right: -35px;
+    top:-50px;
+    text-decoration: none;
+    max-width: 30px;
+}
 
