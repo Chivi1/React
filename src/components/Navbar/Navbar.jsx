@@ -22,7 +22,7 @@ const Navbar = () => {
                 <Link to= '/categorias/gorras'>Gorras</Link>
                 <Link to= '/categorias/accesorios'>Accesorios</Link>
             </ul>
-            <Link to='/cart'>
+            <Link to='/cart' className="cart">
                 <>
                     <CartWidget/>
                 </>

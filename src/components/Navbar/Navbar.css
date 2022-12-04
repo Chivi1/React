@@ -36,4 +36,49 @@
     text-decoration: none;
     max-width: 30px;
 }
+@media all and (max-width: 1001px){
+    .Navbar ul{
+        visibility:hidden;
+    }
+    .cart{
+        display: block;
+        position: absolute;
+        margin-left: 700px; ;
+        overflow: hidden;
+    }
+}
+@media all and (max-width: 868px){
+    .nav-logo{
+        align-items: center;
+        justify-content: center;
+    }
+    .cart{
+        display: block;
+        position: absolute;
+        margin-left: 600px; ;
+    }
+}
+@media all and (max-width: 768px){
+    .cart{
+        display: block;
+        position: absolute;
+        margin-left: 500px;
+        overflow: hidden;
+    }
+}
+@media all and (max-width: 689px){
+    .cart{
+        display: block;
+        position: absolute;
+        margin-left: 400px;
+        overflow: hidden;
+    }
+}
+@media all and (max-width: 583px){
+    .cart{
+        visibility: hidden;
+    }
+}
+
+
 
