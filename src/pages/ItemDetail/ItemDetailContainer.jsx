@@ -9,7 +9,6 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
   const { id } = useParams();
-  console.log(id);
   
   useEffect(() => {
     const Firestore = getFirestore()
@@ -20,16 +19,6 @@ const ItemDetailContainer = () => {
         .catch(err => console.log(err))
           .finally(()=>setLoading(false))
     },[id])
-  console.log(product.id);
-
-//useeffect anterior
-  /*  useEffect(() => {
-    gFetch()
-      .then(resp => setProduct(resp.find(prod => prod.id === id)))
-      .catch(err => console.log(err))
-      .finally(() => setLoading(false))
-  }
-    , [id]); */
   return (
   <div>
     {loading

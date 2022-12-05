@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import "../Footer/Footer.css"
 import imagen from '../../assets/CHIVI_MARCA_isotipo-negro-letras-blancas - copia.png'

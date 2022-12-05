@@ -9,3 +9,13 @@
 .buttons > button:hover{
     background-color: gray;
 }
+@media all and (max-width: 780px){
+    .foto-detail img{
+        width: 200px;
+        padding: 0%;
+    }}
+@media all and (max-width: 480px){
+    .foto-detail img{
+        width: 200px; 
+        padding: 0%;
+    }}
