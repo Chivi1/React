@@ -13,8 +13,8 @@ const Checkout = () => {
         phone: ''
     })
 
-    const terminarCompra = ()=>{ //(e)=> 
-        //e.preventDefault (se rompe)
+    const terminarCompra = (e)=>{  
+        e.preventDefault ()
         let compra = {}
         compra.cliente = {dataForm}
         compra.total = precioCarrito()
@@ -32,7 +32,7 @@ const Checkout = () => {
                                         name: '',
                                         email: '',
                                         phone: ''}),
-                            //borrarCarrito()
+                            borrarCarrito()
         )}
     
     const formOnChange = (e) => {
@@ -46,10 +46,10 @@ return (
         {cartList.map((product)=><li className='items-checkout' key="item"> id: {product.id} - Nombre: {product.name} - Precio: {product.price} - Cantidad:{product.cantidad}</li>)}
         </ul>
         <>
-            <form onSubmit= {terminarCompra()}>
+            <form onSubmit= {()=>terminarCompra()}>
                 <input placeholder='Nombre'             onChange={formOnChange} value= {dataForm.name} type="text" name="name"/>
                 <input placeholder='Correo electrónico' onChange={formOnChange} value= {dataForm.email} type="text" name="email"/>
-                <input placeholder='Repetir correo electrónico' onChange={formOnChange}                         type="text" name="RepetirEmail"/>
+                <input placeholder='Repetir correo electrónico' onChange={formOnChange}                 type="text" name="RepetirEmail"/>
                 <input placeholder='Numero de teléfono' onChange={formOnChange} value= {dataForm.phone} type="number" name="phone"/>
                 <div className='buttons'><button> Hacer pedido </button></div>
             </form>

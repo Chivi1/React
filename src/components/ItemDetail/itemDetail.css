@@ -9,6 +9,9 @@
 .buttons > button:hover{
     background-color: gray;
 }
+.foto-detail > img{
+    max-width: 500px;
+}
 @media all and (max-width: 780px){
     .foto-detail img{
         width: 200px;

@@ -11,7 +11,7 @@ return (
                 {product.name}
             </div>
             <div className='card-body'>
-                    <img src={product.foto} className="foto" />
+                    <img src={product.photo} className="foto" />
             </div>
             <div className='card-footer'>
                 <p>Categoria: {product.categoria}</p>

@@ -12,7 +12,7 @@ const Cart = () => {
           cartList.length !== 0 ? <>
             <ul>
               {cartList.map((product) =>  <li key={product.id}>
-                                          <img src={product.foto} className="fotoCart" />
+                                          <img src={product.photo} className="fotoCart" />
                                           <div className="producto">
                                             Nombre: {product.name} 
                                             <br/>Precio: {product.price} - Cantidad: {product.cantidad}

@@ -21,8 +21,8 @@ return (
     <>
     <div>
         <div className="foto-detail">
-            <img src={product.foto}  />
-            <p>Categoría: {product.categoria}</p>
+            <img src={product.photo}  />
+            <p>{product.name}</p>
             <p>Precio: {product.price}</p>
         </div>
         <div>
