@@ -23,9 +23,8 @@ const Checkout = () => {
                 precio: product.price,  
                 cantidad: product.cantidad}})
     const Firestore = getFirestore()
-    const compras = collection(Firestore,"compras")
+    const compras = collection(Firestore, 'compras')
     addDoc(compras, compra)
-    .then(resp => (console.log(resp)))
     .finally (()=> 
         setDataForm({
                     name: '',
@@ -34,8 +33,6 @@ const Checkout = () => {
                     //borrarCarrito()
     )}
     const formOnChange = (e) => {
-        console.log(e.target.name); 
-        console.log(e.target.value); 
         setDataForm ({...dataForm, [e.target.name]: e.target.value })
     }
 
@@ -43,7 +40,7 @@ return (
     <div>
         <h1>Tu pedido</h1>
         <ul>
-        {cartList.map((product)=><li className='items-checkout'> id: {product.id} - Nombre: {product.name} - Precio: {product.price} - Cantidad:{product.cantidad}</li>)}
+        {cartList.map((product)=><li className='items-checkout' key="item"> id: {product.id} - Nombre: {product.name} - Precio: {product.price} - Cantidad:{product.cantidad}</li>)}
         </ul>
         <>
             <form onSubmit= {terminarCompra()}>
@@ -61,7 +58,7 @@ return (
             <button><Link to='/cart'> Volver a Mi Carrito </Link></button>
         </div>
     </div>)}
-    
+
 export default Checkout 
 
 
