@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
-import "../Footer/Footer.css"
+
 import imagen from '../../assets/CHIVI_MARCA_isotipo-negro-letras-blancas - copia.png'
 import logo from '../../assets/CHIVI_MARCA_logotipo-negro.png'
 import { BsTwitter, BsTwitch, BsInstagram } from "react-icons/bs";
+
+import "../Footer/Footer.css"
 
 const Footer = () => {
     

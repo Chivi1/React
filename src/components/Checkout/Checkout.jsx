@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+
 import "../../pages/Cart/cart.css"
 
 const Checkout = () => {
@@ -12,7 +13,8 @@ const Checkout = () => {
         phone: ''
     })
 
-    const terminarCompra = ()=>{
+    const terminarCompra = ()=>{ //(e)=> 
+        //e.preventDefault (se rompe)
         let compra = {}
         compra.cliente = {dataForm}
         compra.total = precioCarrito()
@@ -22,16 +24,17 @@ const Checkout = () => {
                 nombre: product.name, 
                 precio: product.price,  
                 cantidad: product.cantidad}})
-    const Firestore = getFirestore()
-    const compras = collection(Firestore, 'compras')
-    addDoc(compras, compra)
-    .finally (()=> 
-        setDataForm({
-                    name: '',
-                    email: '',
-                    phone: ''}),
-                    //borrarCarrito()
-    )}
+        const Firestore = getFirestore()
+        const compras = collection(Firestore, 'compras')
+        addDoc(compras, compra)
+            .finally (()=>
+                            setDataForm({
+                                        name: '',
+                                        email: '',
+                                        phone: ''}),
+                            //borrarCarrito()
+        )}
+    
     const formOnChange = (e) => {
         setDataForm ({...dataForm, [e.target.name]: e.target.value })
     }

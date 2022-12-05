@@ -1,5 +1,7 @@
 import imagen from '../../assets/bag-fill.svg'
+
 import "../CartWidget/CartWidget.css"
+
 const CartWidget = () => {
     return (
         <div className='cart-widget'>

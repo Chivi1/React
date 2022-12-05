@@ -1,10 +1,10 @@
-import "./Navbar.css"
-import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 import { useCartContext } from "../../context/CartContext"
 
+import CartWidget from '../CartWidget/CartWidget'
 import logo from '../../assets/CHIVI_MARCA_logotipo-negro.png'
 
+import "./Navbar.css"
 
 
 const Navbar = () => {
