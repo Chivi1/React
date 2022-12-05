@@ -42,7 +42,10 @@
     margin-left: 20px;
     display: block;
 }
-
+.buttons button > a{
+    text-decoration: none;
+    color: black;
+}
 .buttons button{
     background-color: darkgrey;
     color: black;
