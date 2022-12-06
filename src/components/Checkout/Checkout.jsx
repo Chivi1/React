@@ -29,14 +29,12 @@ const Checkout = () => {
         const firestore = getFirestore()
         const orders = collection(firestore, 'compras')
         addDoc(orders, order)
-            .then(resp => {const data = getDoc(orders, resp.id)
-                            return data})
-
-            .then( data => brief.text(`"Compra realizada id: ${data.id}
-                            Propietario: ${data.cliente.name} - ${data.cliente.email}
-                            Pedido: ${data.productos}
-                            Total: ${data.total}"` , 10, 10))
-
+            .then(order => {const dataRef = doc(orders, order.id)
+                            getDoc(dataRef)
+                                .then( doc => brief.text(`"Compra realizada id: ${doc.id}
+                                            Propietario: ${doc.cliente} 
+                                            Pedido: ${doc.productos}
+                                            Total: ${doc.total}"` , 10, 10))})
             .finally (()=>
                             setDataForm({
                                         name: '',
