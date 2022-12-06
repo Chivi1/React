@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
-import { addDoc, collection, doc, getDoc, getFirestore } from 'firebase/firestore'
-import { jsPDF } from "jspdf";
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
+
 
 import "../../pages/Cart/cart.css"
 
@@ -13,8 +13,6 @@ const Checkout = () => {
         email: '',
         phone: ''
     })
-    const brief = new jsPDF();
-
     const terminarCompra = (evt)=>{  
         evt.preventDefault()
         let order = {}
@@ -29,19 +27,14 @@ const Checkout = () => {
         const firestore = getFirestore()
         const orders = collection(firestore, 'compras')
         addDoc(orders, order)
-            .then(order => {const dataRef = doc(orders, order.id)
-                            getDoc(dataRef)
-                                .then( doc => brief.text(`"Compra realizada id: ${doc.id}
-                                            Propietario: ${doc.cliente} 
-                                            Pedido: ${doc.productos}
-                                            Total: ${doc.total}"` , 10, 10))})
+            .then(order => {const brief = `Compra realizada id: ${order.id}`
+                                                    alert(brief)})
             .finally (()=>
                             setDataForm({
                                         name: '',
                                         email: '',
                                         phone: ''}),
                             emptyCart(),
-                            brief.save("Compra.pdf")
         )}
     
     const formOnChange = (e) => {
@@ -52,7 +45,7 @@ return (
     <div>
         <h1>Tu pedido</h1>
         <ul>
-        {cartList.map((product)=><li className='items-checkout' key="item"> id: {product.id} - Nombre: {product.name} - Precio: {product.price} - Cantidad:{product.cantidad}</li>)}
+        {cartList.map((product)=><li className='items-checkout' key={product}> id: {product.id} - Nombre: {product.name} - Precio: {product.price} - Cantidad:{product.cantidad}</li>)}
         </ul>
         <>
             <form onSubmit= {terminarCompra}>

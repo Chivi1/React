@@ -23,8 +23,8 @@ const Cart = () => {
             </ul>
             <div>{cartPrice() !== 0 && <p> Precio total: ${cartPrice() }</p>}</div>
             <div className="buttons">
-              <button onClick={emptyCart}>Vaciar carrito</button>
               <button><Link to='/'> Seguir Comprando </Link></button>
+              <button onClick={emptyCart}>Vaciar carrito</button>
               <button><Link to= '/finalizarCompra'>Ir a Pagar</Link></button>
             </div>
           </>

@@ -35,8 +35,8 @@ return (
                     />
                 :  
                     <div className="buttons">
-                        <button><Link to='/cart' > Terminar mi compra  </Link></button>
                         <button><Link to='/'>  Seguir Comprando  </Link></button>
+                        <button><Link to='/cart' > Terminar mi compra  </Link></button>
                     </div>
             }
             
