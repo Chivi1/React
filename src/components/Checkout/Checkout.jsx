@@ -29,8 +29,7 @@ const Checkout = () => {
         const firestore = getFirestore()
         const orders = collection(firestore, 'compras')
         addDoc(orders, order)
-            .then(resp => {const dataRef = doc (firestore, 'compras')
-                            const data = getDoc(dataRef, resp.id)
+            .then(resp => {const data = getDoc(orders, resp.id)
                             return data})
 
             .then( data => brief.text(`"Compra realizada id: ${data.id}
