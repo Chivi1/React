@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, getFirestore } from 'firebase/firestore'
+import { jsPDF } from "jspdf";
 
 import "../../pages/Cart/cart.css"
 
@@ -12,6 +13,7 @@ const Checkout = () => {
         email: '',
         phone: ''
     })
+    const brief = new jsPDF();
 
     const terminarCompra = (evt)=>{  
         evt.preventDefault()
@@ -27,18 +29,28 @@ const Checkout = () => {
         const firestore = getFirestore()
         const orders = collection(firestore, 'compras')
         addDoc(orders, order)
-            .then(resp =>console.log(resp))
+            .then(resp => {const dataRef = doc (firestore, 'compras')
+                            const data = getDoc(dataRef, resp.id)
+                            return data})
+
+            .then( data => brief.text(`"Compra realizada id: ${data.id}
+                            Propietario: ${data.cliente.name} - ${data.cliente.email}
+                            Pedido: ${data.productos}
+                            Total: ${data.total}"` , 10, 10))
+
             .finally (()=>
                             setDataForm({
                                         name: '',
                                         email: '',
                                         phone: ''}),
-                            emptyCart()
+                            emptyCart(),
+                            brief.save("Compra.pdf")
         )}
     
     const formOnChange = (e) => {
         setDataForm ({...dataForm, [e.target.name]: e.target.value })
     }
+
 return (
     <div>
         <h1>Tu pedido</h1>
