@@ -13,10 +13,10 @@ const Checkout = () => {
         phone: ''
     })
 
-    const terminarCompra = (e)=>{  
-        e.preventDefault ()
+    const terminarCompra = (evt)=>{  
+        evt.preventDefault()
         let compra = {}
-        compra.cliente = {dataForm}
+        compra.cliente = dataForm
         compra.total = precioCarrito()
         compra.productos = cartList.map(product => {
             return {
@@ -24,9 +24,10 @@ const Checkout = () => {
                 nombre: product.name, 
                 precio: product.price,  
                 cantidad: product.cantidad}})
-        const Firestore = getFirestore()
-        const compras = collection(Firestore, 'compras')
+        const firestore = getFirestore()
+        const compras = collection(firestore, 'compras')
         addDoc(compras, compra)
+            .then(resp =>console.log(resp))
             .finally (()=>
                             setDataForm({
                                         name: '',
@@ -38,7 +39,6 @@ const Checkout = () => {
     const formOnChange = (e) => {
         setDataForm ({...dataForm, [e.target.name]: e.target.value })
     }
-
 return (
     <div>
         <h1>Tu pedido</h1>
@@ -46,7 +46,7 @@ return (
         {cartList.map((product)=><li className='items-checkout' key="item"> id: {product.id} - Nombre: {product.name} - Precio: {product.price} - Cantidad:{product.cantidad}</li>)}
         </ul>
         <>
-            <form onSubmit= {()=>terminarCompra()}>
+            <form onSubmit= {terminarCompra}>
                 <input placeholder='Nombre'             onChange={formOnChange} value= {dataForm.name} type="text" name="name"/>
                 <input placeholder='Correo electrónico' onChange={formOnChange} value= {dataForm.email} type="text" name="email"/>
                 <input placeholder='Repetir correo electrónico' onChange={formOnChange}                 type="text" name="RepetirEmail"/>
