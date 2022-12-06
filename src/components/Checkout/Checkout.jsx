@@ -15,18 +15,18 @@ const Checkout = () => {
 
     const terminarCompra = (evt)=>{  
         evt.preventDefault()
-        let compra = {}
-        compra.cliente = dataForm
-        compra.total = cartPrice()
-        compra.productos = cartList.map(product => {
+        let order = {}
+        order.cliente = dataForm
+        order.total = cartPrice()
+        order.productos = cartList.map(product => {
             return {
                 id: product.id,
                 nombre: product.name, 
                 precio: product.price,  
                 cantidad: product.cantidad}})
         const firestore = getFirestore()
-        const compras = collection(firestore, 'compras')
-        addDoc(compras, compra)
+        const orders = collection(firestore, 'compras')
+        addDoc(orders, order)
             .then(resp =>console.log(resp))
             .finally (()=>
                             setDataForm({
