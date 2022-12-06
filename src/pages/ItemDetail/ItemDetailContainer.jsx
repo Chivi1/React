@@ -12,8 +12,8 @@ const ItemDetailContainer = () => {
   
   useEffect(() => {
     const Firestore = getFirestore()
-    const catalogo = collection (Firestore, 'productos')
-    let filtro = doc(catalogo, id)
+    const items = collection (Firestore, 'productos')
+    let filtro = doc(items, id)
       getDoc(filtro)
       .then((doc) => setProduct(   { id: doc.id, ...doc.data() }  ))
         .catch(err => console.log(err))

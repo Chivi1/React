@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import imagen from '../../assets/CHIVI_MARCA_isotipo-negro-letras-blancas - copia.png'
+import image from '../../assets/CHIVI_MARCA_isotipo-negro-letras-blancas - copia.png'
 import logo from '../../assets/CHIVI_MARCA_logotipo-negro.png'
 import { BsTwitter, BsTwitch, BsInstagram } from "react-icons/bs";
 
@@ -16,7 +16,7 @@ return (
             <ul className="links">
             <>
                 <Link to = '/'>
-                    <img src={imagen} className="img"/>
+                    <img src={image} className="img"/>
                 </Link>
             </>
                 <li className="nav-item">

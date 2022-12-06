@@ -6,7 +6,7 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import "../../pages/Cart/cart.css"
 
 const Checkout = () => {
-    const { cartList, precioCarrito, borrarCarrito } = useCartContext()
+    const { cartList, cartPrice, emptyCart } = useCartContext()
     const [ dataForm, setDataForm ] = useState({
         name: '',
         email: '',
@@ -17,7 +17,7 @@ const Checkout = () => {
         evt.preventDefault()
         let compra = {}
         compra.cliente = dataForm
-        compra.total = precioCarrito()
+        compra.total = cartPrice()
         compra.productos = cartList.map(product => {
             return {
                 id: product.id,
@@ -33,7 +33,7 @@ const Checkout = () => {
                                         name: '',
                                         email: '',
                                         phone: ''}),
-                            borrarCarrito()
+                            emptyCart()
         )}
     
     const formOnChange = (e) => {
@@ -55,7 +55,7 @@ return (
             </form>
         </>
         <div>
-            <h2>Precio total: {precioCarrito()}</h2>
+            <h2>Precio total: {cartPrice()}</h2>
         </div>
         <div className='buttons'>
             <button><Link to='/cart'> Volver a Mi Carrito </Link></button>

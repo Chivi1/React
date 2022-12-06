@@ -4,10 +4,10 @@ import '../../components/Contador/ItemCount.css'
 
 const ItemCount = ({initial=1, onAdd}) => {
     const [count, setCount] = useState(initial);
-    const restar = () => {
+    const reduceCount = () => {
         setCount (count - 1);
     }
-    const sumar = () => {
+    const addCount = () => {
         setCount  (count + 1);
     }
     const addCantidad = () => {
@@ -16,9 +16,9 @@ const ItemCount = ({initial=1, onAdd}) => {
 
 return (
     <div className='contador'>
-        <button disabled = {count <= 1} onClick={restar}>-</button>
+        <button disabled = {count <= 1} onClick={reduceCount}>-</button>
         <span>{count}</span>
-        <button onClick={sumar}>+</button> 
+        <button onClick={addCount}>+</button> 
             <div className="add">
                 <button onClick={addCantidad}>Agregar al carrito</button>
             </div>

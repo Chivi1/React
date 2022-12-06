@@ -13,17 +13,17 @@ const ItemListContainer = () => {
     
     useEffect(() => {
     const Firestore = getFirestore()
-    const catalogo = collection (Firestore, 'productos')
+    const items = collection (Firestore, 'productos')
     
     if (categoriaId) {
-        let filter = query(catalogo, where('categoria', '==', categoriaId) )  
+        let filter = query(items, where('categoria', '==', categoriaId) )  
                 getDocs(filter)
                 .then((resp) => setProducts( resp.docs.map(doc => ( { id: doc.id, ...doc.data() } ) ) ))
                 .catch(err => console.log(err))
                 .finally(()=>setLoading(false)) 
                 
             }else{
-                getDocs(catalogo)
+                getDocs(items)
                 .then((resp) => setProducts( resp.docs.map(doc => ( { id: doc.id, ...doc.data() } ) ) ))
                 .catch(err => console.log(err))
                 .finally(()=>setLoading(false)) 

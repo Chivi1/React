@@ -12,8 +12,8 @@ const ItemDetail = ({ product }) => {
     const [isCounter, setIsCounter] = useState(true)
     const {addToCart} = useCartContext()
 
-    const onAdd = (cantidad) => {
-        addToCart( { ...product, cantidad } )
+    const onAdd = (quantity) => {
+        addToCart( { ...product, cantidad: quantity } )
         setIsCounter(false)
     }
 
