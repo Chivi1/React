@@ -9,6 +9,7 @@ footer {
     display: flex;
     height: 300px;
     align-items: center;
+    overflow: hidden;
 }
 footer .img {
     height: 125px;

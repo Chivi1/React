@@ -49,10 +49,10 @@ return (
         </ul>
         <>
             <form onSubmit= {terminarCompra}>
-                <input placeholder='Nombre'             onChange={formOnChange} value= {dataForm.name} type="text" name="name"/>
-                <input placeholder='Correo electrónico' onChange={formOnChange} value= {dataForm.email} type="text" name="email"/>
-                <input placeholder='Repetir correo electrónico' onChange={formOnChange}                 type="text" name="RepetirEmail"/>
-                <input placeholder='Numero de teléfono' onChange={formOnChange} value= {dataForm.phone} type="number" name="phone"/>
+                <input placeholder='Nombre'             onChange={formOnChange} value= {dataForm.name} type="text" name="name" required/>
+                <input placeholder='Correo electrónico' onChange={formOnChange} value= {dataForm.email} type="text" name="email" required/>
+                <input placeholder='Repetir correo electrónico' onChange={formOnChange}                 type="text" name="RepetirEmail"required/>
+                <input placeholder='Numero de teléfono' onChange={formOnChange} value= {dataForm.phone} type="number" name="phone" required/>
                 <div className='buttons'><button> Hacer pedido </button></div>
             </form>
         </>
